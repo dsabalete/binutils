@@ -1,6 +1,5 @@
 from Tkinter import *
 from PIL import Image, ImageTk
-import random
 import urllib
 
 
@@ -55,7 +54,8 @@ class MyApp(Tk):
 
 def grabaFitxer(filename, url):
         file_name = url.split('/')[-1]
-        u = urllib.urlopen(url, proxies=proxies)
+        #u = urllib.urlopen(url, proxies=proxies)
+        u = urllib.urlopen(url)
         f = open(filename, 'wb')
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
