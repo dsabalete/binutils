@@ -1,6 +1,7 @@
 from Tkinter import *
 from PIL import Image, ImageTk
 import urllib
+import os
 
 
 proxies = {'http': 'http://10.2.201.33:8080'}
@@ -51,6 +52,7 @@ class MyApp(Tk):
                         self.position = 0
 
                 huh = self.after(1000, self.slideshow)
+                
 
 def grabaFitxer(filename, url):
         file_name = url.split('/')[-1]
@@ -84,9 +86,14 @@ def descarregaFitxers(url):
                 grabaFitxer(filename, x)
                 i = i + 1
 
+def netejaFitxers():
+        filelist = [ f for f in os.listdir(".") if f.endswith(".gif")]
+        for f in filelist:
+                os.remove(f)
 
 descarregaFitxers(url)
 
 if __name__ == "__main__":
         root = MyApp()
         root.mainloop()
+        netejaFitxers()
