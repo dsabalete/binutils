@@ -34,9 +34,9 @@ class App:
 		self.list_targets.pack(fill=BOTH, expand=1)
 		
 		targets = [
-			('Local', ['z:\\']), 
-			('Test', ['\\\\was-ts8\microinf\commareas']), 
-			('Pre', ['\\\\was-pre8\microinf\commareas']), 
+			('Local', ['C:\\temp']), 
+			('Test', ['\\was-ts8\microinf\commareas']), 
+			('Pre', ['\\was-pre8\microinf\commareas']), 
 			('Produccio', [
 					'\\\\was-c01\microinf\commareas', 
 					'\\\\was-c02\microinf\commareas',
@@ -71,8 +71,6 @@ class App:
 
 	def open(self):
 		self.dir = askdirectory()		
-		# self.vDir = StringVar()
-		# self.vDir.set(dir)
 		self.txt_dir.set("Directori origen: {0}".format(str(self.dir)))
 
 		
@@ -81,7 +79,6 @@ class App:
 		items = [self.targets[int(item)] for item in items]
 		for item in items:			
 			for server in item[1]:
-				#self.copyFileToServer(self.vDir.get(), server)
 				self.copyFileToServer(str(self.dir), server)
 
 				
@@ -89,6 +86,8 @@ class App:
 		try:
 			self.txt_log.set("Copiant {0} a {1}... ".format(src, dst))			
 			copy(src, dst)
+		except AttributeError as ae:
+			self.txt_msg.set("No has seleccionat el directori de origen")			
 		except IOError as e:
 			self.txt_msg.set("IOError({0}) : {1}".format(e.errno, e.strerror))
 		except:
