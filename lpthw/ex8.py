@@ -10,6 +10,8 @@ print formatter % (formatter, formatter, formatter, formatter)
 print formatter % (
     "I had this thing.",
     "That you could type up right.",
-    "But it didn't sing.",
+    "But it didn't sing.", # on the output this line is printed in double quotes
+			   # because it has a single quote in the string value
+			   # and it must be escaped
     "So I said goodnight."
 )
