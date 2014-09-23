@@ -3,8 +3,14 @@
 
 # Setting value for different variables
 cars = 100
+
+# Capacity of each car
 space_in_a_car = 4.0
+
+# Total number of drivers
 drivers = 30
+
+# Total number of passengers
 passengers = 90
 
 # Calculate how many cars are not driven
