@@ -16,7 +16,7 @@ print "I said: %r." % x 		# string inside string
 print "I also said: '%s'." % y 		# string inside string
 
 # more variables
-hilarious = False
+hilarious = True
 joke_evaluation = "Isn't that joke so funny?! %r"
 
 # evaluate boolean value inside a string var
