@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# http://learnpythonthehardway.org/book/ex11.html
+# http://learnpythonthehardway.org/book/ex12.html
 
 age = raw_input("How old are you? ")
 height = raw_input("How tall are you? ")
