@@ -29,3 +29,8 @@ target.write("%s \n %s \n %s \n" % (line1, line2, line3))
 
 print "And finally, we close it."
 target.close()
+
+print "\nContent of %s : " % filename
+source = open(filename, 'r')
+print source.read()
+source.close()
