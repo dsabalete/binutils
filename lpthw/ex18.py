@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# http://learnpythonthehardway.org/book/ex17.html
+# http://learnpythonthehardway.org/book/ex18.html
 
 # this one is like your scripts with argv
 def print_two(*args):
